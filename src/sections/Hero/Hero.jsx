@@ -1,5 +1,5 @@
 import styles from './Styles.module.css'
-import heroImg from '../../assets/hero-img.png'
+import heroImg from '../../assets/img.png'
 import sun from '../../assets/sun.svg'
 import moon from '../../assets/moon.svg'
 import twitterLight from '../../assets/twitter-light.svg'
@@ -8,7 +8,7 @@ import githubLight from '../../assets/github-light.svg'
 import githubDark from '../../assets/github-dark.svg'
 import linkdinLight from '../../assets/linkedin-light.svg'
 import linkdinDark from '../../assets/linkedin-dark.svg'
-import CV from '../../assets/cv.pdf'
+import CV from '../../assets/Resume_Kolla Hemanth.pdf'
 import { useTheme } from '../../common/ThemeContext'
 function Hero() {
     const {theme, toggleTheme} = useTheme();
@@ -33,13 +33,14 @@ function Hero() {
             onClick={toggleTheme} />
         </div>
         <div className={styles.info}>
-            <h1>Hemanth
+            <h1>Kolla <br />
+                 Hemanth
                 <br/>
                 Kumar
             </h1>
             <h2>Frontend developer</h2>
             <span className='span'>
-                <a href="https://twitter.com/" target='_blank'>
+                <a href="https://twitter.com/" target='/'>
                 <img src={twitterIcon} alt="Twitter icon" />
                 </a>
                 <a href="https://github.com/" target='/'>
@@ -51,7 +52,7 @@ function Hero() {
             </span>
             <p
             className={styles.description}>With a passion on creating modern apps and aking projects of my own using latest technologies</p>
-            <a href={CV}>
+            <a href={CV} target='/'>
                 <button className='hover'>Resume</button>
             </a>
         </div>
