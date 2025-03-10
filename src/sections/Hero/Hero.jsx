@@ -33,7 +33,6 @@ function Hero() {
             onClick={toggleTheme} />
         </div>
         <div className={styles.info}>
-            <h1>Kolla <br />
                  Hemanth
                 <br/>
                 Kumar
@@ -46,12 +45,10 @@ function Hero() {
                 <a href="https://github.com/" target='/'>
                 <img src={githubIcon} alt="github icon" />
                 </a>
-                <a href="https://www.linkedin.com/" target='www.linkedin.com/in/kolla-hemanth-kumar-773320222/'>
                 <img src={linkdinIcon} alt="linkdin icon" />
                 </a>
             </span>
             <p
-            className={styles.description}>With a passion on creating modern apps and aking projects of my own using latest technologies</p>
             <a href={CV} target='/'>
                 <button className='hover'>Resume</button>
             </a>

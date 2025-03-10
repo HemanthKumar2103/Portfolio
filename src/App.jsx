@@ -4,14 +4,13 @@ import Hero from './sections/Hero/Hero'
 import Rights from './sections/Rights/Rights'
 import Skill from './sections/Skills/Skill'
 function App() {
-  return(
-  <>
-   <Hero/>
-   <Skill/>
-   <Contact/>
-   <Rights/>
-  </>
-  )
+  return (
+          <>
+            <Hero/>
+            <Skill />
+            <Contact />
+            <Rights />
+          </>
+  );
 }
-
-export default App
+export default App;
