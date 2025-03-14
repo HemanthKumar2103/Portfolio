@@ -53,7 +53,7 @@ function Hero() {
             </span>
             <p
             className={styles.description}>With a passion on creating modern apps and making projects of my own using latest technologies</p>
-            <a href={CV} target='/'>
+            <a href={CV} download target='/'>
                 <button className='hover'>Resume</button>
             </a>
         </div>
