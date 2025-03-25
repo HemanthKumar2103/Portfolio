@@ -19,14 +19,39 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs.send('service_qi5ojpp', 'template_4y3ga6v', formData, 'ApCcsLabUmPNGTWY9')
+    emailjs.send('service_qi5ojpp', 'template_4y3ga6v', {
+      name: formData.name,
+      email: formData.email,
+      message: formData.message
+    }, 'ApCcsLabUmPNGTWY9')
       .then((response) => {
-        console.log('SUCCESS!', response.status, response.text);
-        alert('Message sent successfully!');
-      }, (err) => {
-        console.error('FAILED...', err);
-        alert('Failed to send the message. Please try again.');
+        console.log('Feedback email sent successfully!', response.status);
+      })
+      .catch((err) => {
+        console.error('Failed to send feedback email.', err);
       });
+
+    // Send response email to the user
+    emailjs.send('service_qi5ojpp', 'template_eofq2ka', {
+      name: formData.name,
+      email: formData.email,
+      message: formData.message
+    }, 'ApCcsLabUmPNGTWY9')
+      .then((response) => {
+        console.log('Response email sent successfully!', response.status);
+      })
+      .catch((err) => {
+        console.error('Failed to send response email.', err);
+      });
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
+    
+      // Optional: Show a success message to the user
+      alert('Thank you! Your message has been sent.');
+    
   };
 
   return (
