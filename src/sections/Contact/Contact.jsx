@@ -19,7 +19,7 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs.send('service_0ctrs4p', 'template_3ts8bxf', formData, 'ApCcsLabUmPNGTWY9')
+    emailjs.send('service_qi5ojpp', 'template_4y3ga6v', formData, 'ApCcsLabUmPNGTWY9')
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
         alert('Message sent successfully!');
