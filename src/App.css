@@ -18,7 +18,7 @@
     --footer-text-color: #bbb;
   }
   
-  body {
+   body {
     background-color: var(--background-color);
     display: flex;
     justify-content: center;
@@ -105,4 +105,5 @@
         margin-bottom: 75px;
       }
     }
-  }
+  } 
+  

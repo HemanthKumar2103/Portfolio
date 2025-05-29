@@ -8,7 +8,7 @@ import githubLight from '../../assets/github-light.svg'
 import githubDark from '../../assets/github-dark.svg'
 import linkdinLight from '../../assets/linkedin-light.svg'
 import linkdinDark from '../../assets/linkedin-dark.svg'
-import CV from '../../assets/My_Resume.pdf'
+import CV from '../../assets/Hemanth_frontend Developer.pdf'
 import { useTheme } from '../../common/ThemeContext'
 function Hero() {
     const {theme, toggleTheme} = useTheme();
@@ -53,7 +53,7 @@ function Hero() {
             </span>
             <p
             className={styles.description}>With a passion on creating modern apps and making projects of my own using latest technologies</p>
-            <a href={CV} download target='/'>
+            <a href={CV} >
                 <button className='hover'>Resume</button>
             </a>
         </div>

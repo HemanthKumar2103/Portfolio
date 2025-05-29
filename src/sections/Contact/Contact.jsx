@@ -30,8 +30,6 @@ function Contact() {
       .catch((err) => {
         console.error('Failed to send feedback email.', err);
       });
-
-    // Send response email to the user
     emailjs.send('service_qi5ojpp', 'template_eofq2ka', {
       name: formData.name,
       email: formData.email,
@@ -48,8 +46,6 @@ function Contact() {
         email: '',
         message: ''
       });
-    
-      // Optional: Show a success message to the user
       alert('Thank you! Your message has been sent.');
     
   };

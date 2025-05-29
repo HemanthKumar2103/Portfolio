@@ -7,8 +7,8 @@ function App() {
   return (
           <>
             <Hero/>
-            <Skill />
-            <Contact />
+            <Skill/>
+            <Contact/>
             <Rights />
           </>
   );
