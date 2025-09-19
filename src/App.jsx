@@ -5,6 +5,8 @@ import Navigation from './components/Navigation/Navigation';
 import FloatingElements from './components/FloatingElements/FloatingElements';
 import ParticleBackground from './components/ParticleBackground/ParticleBackground';
 import VoiceNavigation from './components/VoiceNavigation/VoiceNavigation';
+import AIChatbot from './components/AIChatbot/AIChatbot';
+import Collaboration from './components/Collaboration/Collaboration';
 import Home from './pages/Home';
 import AboutPage from './pages/AboutPage';
 import SkillsPage from './pages/SkillsPage';
@@ -20,6 +22,8 @@ function App() {
       <CursorBalls />
       <Navigation />
       <VoiceNavigation />
+      <AIChatbot />
+      <Collaboration />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />

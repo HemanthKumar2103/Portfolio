@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import Analytics from '../Analytics/Analytics';
 import styles from './NavigationStyles.module.css';
 
 function Navigation() {
@@ -22,6 +23,10 @@ function Navigation() {
         <Link to="/" className={styles.navLogo} onClick={closeMenu}>
           HK
         </Link>
+        
+        <div className={styles.desktopAnalytics}>
+          <Analytics />
+        </div>
         
         <div className={`${styles.hamburger} ${isMenuOpen ? styles.active : ''}`} onClick={toggleMenu}>
           <span></span>
@@ -74,6 +79,9 @@ function Navigation() {
             >
               Contact
             </Link>
+          </li>
+          <li className={styles.mobileAnalytics}>
+            <Analytics />
           </li>
         </ul>
       </div>

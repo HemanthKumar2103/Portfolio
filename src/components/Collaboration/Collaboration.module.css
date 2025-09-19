@@ -1,0 +1,188 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.cursor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1000;
+  transition: all 0.1s ease;
+}
+
+.cursorLabel {
+  position: absolute;
+  top: -30px;
+  left: 25px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.visitorsPanel {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  pointer-events: all;
+}
+
+.visitorsButton {
+  background: var(--project-card-bg);
+  border: 1px solid var(--border-color);
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+[data-theme='dark'] .visitorsButton {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.visitorsButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+}
+
+.visitorsDropdown {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  background: var(--project-card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 15px;
+  min-width: 200px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+}
+
+[data-theme='dark'] .visitorsDropdown {
+  background: rgba(26, 32, 44, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.visitorsDropdown h4 {
+  margin: 0 0 10px 0;
+  color: var(--text-color);
+  font-size: 14px;
+}
+
+.visitorsList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.visitor {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-color);
+}
+
+.visitorDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--form-text-color);
+}
+
+.activityFeed {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  pointer-events: all;
+}
+
+.activity {
+  background: var(--project-card-bg);
+  border: 1px solid var(--border-color);
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(10px);
+  animation: slideIn 0.5s ease;
+}
+
+[data-theme='dark'] .activity {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.activityDot {
+  width: 6px;
+  height: 6px;
+  background: #00ff88;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.totalVisits {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-color);
+  font-size: 12px;
+  color: var(--form-text-color);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .visitorsPanel {
+    top: 90px;
+    left: 15px;
+  }
+  
+  .activityFeed {
+    bottom: 15px;
+    left: 15px;
+  }
+  
+  .visitorsDropdown {
+    min-width: 180px;
+  }
+}
