@@ -1,0 +1,245 @@
+.gamePrompt {
+  text-align: center;
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 300px;
+}
+
+.gameBtn {
+  background: linear-gradient(45deg, var(--btn-color), var(--accent-color));
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.gameBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(102, 126, 234, 0.4);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+}
+
+.welcome {
+  text-align: center;
+  max-width: 500px;
+  padding: 40px;
+  background: var(--project-card-bg);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme='dark'] .welcome {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 10px;
+  background: linear-gradient(45deg, var(--btn-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: var(--form-text-color);
+  margin-bottom: 30px;
+}
+
+.gameInfo {
+  margin-bottom: 30px;
+}
+
+.gameInfo p {
+  margin: 8px 0;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.startBtn, .skipBtn, .enterBtn, .playAgainBtn {
+  background: linear-gradient(45deg, var(--btn-color), var(--accent-color));
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 10px;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.startBtn:hover, .enterBtn:hover, .playAgainBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(102, 126, 234, 0.4);
+}
+
+.skipBtn {
+  background: transparent;
+  color: var(--btn-color);
+  border: 2px solid var(--btn-color);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+}
+
+.skipBtn:hover {
+  background: linear-gradient(45deg, var(--btn-color), var(--accent-color));
+  color: white;
+  border-color: transparent;
+}
+
+.gameArea {
+  width: 100%;
+  max-width: 800px;
+  height: 600px;
+  position: relative;
+}
+
+.gameHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: var(--project-card-bg);
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+}
+
+[data-theme='dark'] .gameHeader {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.score, .timer {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.playArea {
+  width: 100%;
+  height: 500px;
+  background: var(--project-card-bg);
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  cursor: crosshair;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+}
+
+[data-theme='dark'] .playArea {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.target {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  animation: bounce 1s ease-in-out infinite alternate;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  transition: transform 0.1s ease;
+  object-fit: cover;
+  border: 3px solid var(--btn-color);
+}
+
+.target:hover {
+  transform: scale(1.2);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.target:active {
+  transform: scale(0.8);
+}
+
+@keyframes bounce {
+  0% { transform: scale(1) rotate(0deg); }
+  100% { transform: scale(1.1) rotate(5deg); }
+}
+
+.result {
+  text-align: center;
+  max-width: 500px;
+  padding: 40px;
+  background: var(--project-card-bg);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme='dark'] .result {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.resultTitle {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.resultScore {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--btn-color);
+  margin-bottom: 15px;
+}
+
+.resultMessage {
+  font-size: 16px;
+  color: var(--form-text-color);
+  margin-bottom: 30px;
+}
+
+.resultButtons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 24px;
+  }
+  
+  .gameArea {
+    max-width: 100%;
+    height: 500px;
+  }
+  
+  .playArea {
+    height: 400px;
+  }
+  
+  .target {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .welcome, .result {
+    padding: 30px 20px;
+  }
+  
+  .resultButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+}

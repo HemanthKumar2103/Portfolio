@@ -10,13 +10,22 @@ import linkdinLight from '../../assets/linkedin-light.svg'
 import linkdinDark from '../../assets/linkedin-dark.svg'
 import CV from '../../assets/Hemanth_frontend Developer.pdf'
 import { useTheme } from '../../common/ThemeContext'
+import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { FadeInUp, SlideInLeft, SlideInRight } from '../../components/ScrollAnimations/ScrollAnimations';
+
 function Hero() {
     const {theme, toggleTheme} = useTheme();
+    const navigate = useNavigate();
 
     const themeIcon = theme === 'light' ? sun : moon;
     const twitterIcon = theme === 'light' ? twitterLight : twitterDark;
     const githubIcon = theme === 'light' ? githubLight : githubDark;
     const linkdinIcon = theme === 'light' ? linkdinLight : linkdinDark;
+
+    const goToContact = () => {
+        navigate('/contact');
+    };
 
   return (
     <section id="hero" className={styles.container}>
@@ -39,23 +48,29 @@ function Hero() {
                 <br/>
                 Kumar
             </h1>
-            <h2>Frontend developer</h2>
-            <span className='span'>
-                <a href="https://x.com/kanna_143225" target='/'>
+            <h2>Frontend Developer</h2>
+            <span className={styles.socialLinks}>
+                <a href="https://x.com/kanna_143225" target="_blank" rel="noopener noreferrer">
                 <img src={twitterIcon} alt="Twitter icon" />
                 </a>
-                <a href="https://github.com/HemanthKumar2103" target='/'>
+                <a href="https://github.com/HemanthKumar2103" target="_blank" rel="noopener noreferrer">
                 <img src={githubIcon} alt="github icon" />
                 </a>
-                <a href="https://www.linkedin.com/in/kolla-hemanth-kumar-773320222/" target='/'>
+                <a href="https://www.linkedin.com/in/kolla-hemanth-kumar-773320222/" target="_blank" rel="noopener noreferrer">
                 <img src={linkdinIcon} alt="linkdin icon" />
                 </a>
             </span>
-            <p
-            className={styles.description}>With a passion on creating modern apps and making projects of my own using latest technologies</p>
-            <a href={CV} >
-                <button className='hover'>Resume</button>
-            </a>
+            <p className={styles.description}>
+                With a passion for creating modern apps and making projects of my own using latest technologies
+            </p>
+            <div className={styles.buttonGroup}>
+                <a href={CV} download>
+                    <button className='hover'>Resume</button>
+                </a>
+                <button className={`${styles.contactBtn} hover`} onClick={goToContact}>
+                    Get in Touch
+                </button>
+            </div>
         </div>
     </section>
   )

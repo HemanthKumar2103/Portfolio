@@ -1,47 +1,218 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 15px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.container span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+}
+
+.container img {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.skillCategory {
+  margin-bottom: 20px;
+}
+
+.categoryTitle {
+  background: linear-gradient(45deg, var(--btn-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.skillList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 0 5px;
+}
+
+.skillList span {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  padding: 8px 12px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  min-width: 90px;
+  max-width: 120px;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.skillList span::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--btn-color), var(--accent-color));
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.skillList span:hover::before {
+  left: 0;
+}
+
+.skillList span:hover {
+  transform: translateY(-3px);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.skillList span:hover p {
+  color: white;
+}
+
+.skillList span:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.skillList span p {
+  font-size: 11px;
+  margin: 0;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+hr {
+  width: 60px;
+  height: 2px;
+  border: none;
+  background: linear-gradient(45deg, var(--btn-color), var(--accent-color));
+  margin: 20px auto;
+  border-radius: 2px;
+}
+
+@media (min-width: 480px) {
+  .skillList {
+    gap: 12px;
+  }
   
-    span {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
+  .skillList span {
+    min-width: 100px;
+    max-width: 130px;
+    padding: 9px 14px;
+  }
+
+  .skillList span p {
+    font-size: 12px;
+  }
   
-    img {
-      width: 20px;
-    }
+  .container img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .categoryTitle {
+    font-size: 18px;
+  }
+
+  hr {
+    width: 80px;
+  }
+}
+
+@media (min-width: 768px) {
+  .skillCategory {
+    margin-bottom: 25px;
   }
   
   .skillList {
-    display: flex;
-    justify-content: space-evenly;
-    align-self: center;
-    flex-wrap: wrap;
-    row-gap: 40px;
-    max-width: 26ch;
+    gap: 15px;
   }
   
+  .skillList span {
+    min-width: 120px;
+    max-width: 150px;
+    padding: 12px 18px;
+  }
+
+  .skillList span p {
+    font-size: 14px;
+  }
+  
+  .container img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .categoryTitle {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
   hr {
-    width: 100px;
-    height: 1px;
-    border: none;
-    background-color: var(--text-color);
-    margin: 30px auto;
+    width: 150px;
+    margin: 25px auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .skillList {
+    gap: 20px;
   }
   
-  @media (width >= 800px) {
-    .skillList {
-      max-width: fit-content;
-      gap: 30px;
-  
-      p {
-        font-size: 20px;
-      }
-    }
-  
-    hr {
-      width: 300px;
-    }
+  .skillList span {
+    min-width: 140px;
+    max-width: 170px;
+    padding: 14px 20px;
   }
+
+  .skillList span p {
+    font-size: 16px;
+  }
+  
+  .container img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .categoryTitle {
+    font-size: 22px;
+  }
+
+  hr {
+    width: 200px;
+    height: 3px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .skillList span p {
+    font-size: 18px;
+  }
+  
+  .categoryTitle {
+    font-size: 24px;
+  }
+
+  hr {
+    width: 300px;
+  }
+}
