@@ -6,13 +6,13 @@
 }
 
 .chatButton {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: linear-gradient(45deg, #667eea, #764ba2);
   border: none;
   color: white;
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
@@ -25,10 +25,10 @@
 
 .chatWindow {
   position: absolute;
-  bottom: 70px;
+  bottom: 60px;
   right: 0;
-  width: 350px;
-  height: 500px;
+  width: 280px;
+  height: 400px;
   background: var(--project-card-bg);
   border-radius: 15px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
@@ -46,11 +46,12 @@
 .header {
   background: linear-gradient(45deg, var(--btn-color), var(--accent-color));
   color: white;
-  padding: 15px 20px;
+  padding: 12px 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-weight: 600;
+  font-size: 14px;
 }
 
 .header button {
@@ -69,11 +70,26 @@
 
 .messages {
   flex: 1;
-  padding: 20px;
+  padding: 15px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--btn-color) transparent;
+}
+
+.messages::-webkit-scrollbar {
+  width: 4px;
+}
+
+.messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background: var(--btn-color);
+  border-radius: 2px;
 }
 
 .message {
@@ -123,21 +139,24 @@
 }
 
 .inputArea {
-  padding: 20px;
+  padding: 15px;
   border-top: 1px solid var(--border-color);
   display: flex;
   gap: 10px;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .inputArea input {
   flex: 1;
-  padding: 12px 16px;
+  padding: 10px 12px;
   border: 1px solid var(--border-color);
-  border-radius: 25px;
+  border-radius: 20px;
   background: var(--project-card-bg);
   color: var(--text-color);
-  font-size: 14px;
+  font-size: 13px;
   outline: none;
+  max-width: calc(100% - 80px);
 }
 
 [data-theme='dark'] .inputArea input {
@@ -153,12 +172,18 @@
   background: linear-gradient(45deg, var(--btn-color), var(--accent-color));
   color: white;
   border: none;
-  padding: 12px 20px;
-  border-radius: 25px;
-  font-size: 14px;
+  padding: 10px 14px;
+  border-radius: 20px;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
+  flex-shrink: 0;
+  width: 60px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .inputArea button:hover {
@@ -169,17 +194,18 @@
 @media (max-width: 768px) {
   .container {
     bottom: 80px;
-    right: 20px;
+    right: 15px;
   }
   
   .chatWindow {
-    width: 300px;
-    height: 400px;
+    width: 260px;
+    height: 350px;
+    right: -10px;
   }
   
   .chatButton {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
   }
 }

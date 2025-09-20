@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import styles from './Analytics.module.css';
 
-function Analytics() {
+function Analytics({ isMobile = false }) {
   const [analytics, setAnalytics] = useState({
     pageViews: 0,
     timeOnPage: 0,
@@ -79,7 +79,7 @@ function Analytics() {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${isMobile ? styles.mobile : styles.desktop}`}>
       <button 
         className={styles.analyticsButton}
         onClick={() => setShowAnalytics(!showAnalytics)}

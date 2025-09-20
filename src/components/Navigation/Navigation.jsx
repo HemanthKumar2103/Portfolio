@@ -25,7 +25,7 @@ function Navigation() {
         </Link>
         
         <div className={styles.desktopAnalytics}>
-          <Analytics />
+          <Analytics isMobile={false} />
         </div>
         
         <div className={`${styles.hamburger} ${isMenuOpen ? styles.active : ''}`} onClick={toggleMenu}>
@@ -81,7 +81,7 @@ function Navigation() {
             </Link>
           </li>
           <li className={styles.mobileAnalytics}>
-            <Analytics />
+            <Analytics isMobile={true} />
           </li>
         </ul>
       </div>

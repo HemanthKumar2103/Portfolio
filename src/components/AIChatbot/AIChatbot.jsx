@@ -1,14 +1,38 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import styles from './AIChatbot.module.css';
 
 function AIChatbot() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const chatRef = useRef(null);
   const [messages, setMessages] = useState([
     { id: 1, text: "Hi! I'm Hemanth's AI assistant. How can I help you explore his portfolio?", sender: 'bot' }
   ]);
   const [input, setInput] = useState('');
   const navigate = useNavigate();
+
+  // Close chatbot when page changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
+  // Close chatbot when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (chatRef.current && !chatRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
 
   const botResponses = {
     'skills': "Hemanth is skilled in React, JavaScript, TypeScript, Node.js, and modern web technologies. Would you like to see his skills page?",
@@ -64,7 +88,7 @@ function AIChatbot() {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={chatRef}>
       <button 
         className={styles.chatButton}
         onClick={() => setIsOpen(!isOpen)}
