@@ -77,7 +77,7 @@
 @media (max-width: 768px) {
   .container {
     bottom: 20px;
-    right: 20px;
+    right: 15px;
   }
   
   .voiceBtn {
@@ -89,5 +89,6 @@
   .transcript, .listeningIndicator {
     font-size: 12px;
     padding: 8px 10px;
+    bottom: 55px;
   }
 }
