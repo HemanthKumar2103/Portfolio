@@ -27,8 +27,8 @@ function Projects() {
       title: "Weather Dashboard",
       description: "Modern weather application with location-based forecasts, interactive maps, weather alerts, and beautiful data visualizations using Chart.js.",
       technologies: ["React", "OpenWeather API", "Chart.js", "Geolocation", "CSS3"],
-      githubLink: "https://github.com/HemanthKumar2103",
-      liveLink: "#",
+      githubLink: "https://github.com/HemanthKumar2103/weather-dashboard",
+      liveLink: "https://weatherdashboard213.netlify.app/",
       status: "Completed",
       image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=250&fit=crop"
     },
